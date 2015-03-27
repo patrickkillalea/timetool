@@ -1,0 +1,63 @@
+.white {
+    color: white;
+}
+.navbar-custom {
+    /*background-color: #3B5999;*/
+    background-color: #006768;
+    color: #ffffff;
+    border-radius: 0;
+    max-height: 10px;
+    /*line-height: 40px;*/
+}
+.navbar-custom .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: transparent;
+}
+.navbar-custom .navbar-brand {
+    color: #eeeeee;
+}
+.icon-hover:hover,
+.icon-hover:active {
+    color: black;
+    cursor: pointer;
+    cursor: hand;
+}
+.middle-glyphicon {
+    font-size: 1.3em;
+    line-height: 40px;
+    padding: 5px;
+    left: 10px;
+}
+.glyphicon {
+    font-size: 1.3em;
+    line-height: 40px;
+    padding: 5px;
+}
+.thick-font {
+    font-weight: 900;
+}
+.home-link {
+    font-weight: 900;
+    line-height: 40px;
+    padding: 5px;
+    left: 10px;
+}
+.thumb-icons {
+    height: 180px;
+    width: 100%;
+    display: block;
+}
+.thumb-center {
+    text-align: center;
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+}
+body {
+    background-color: #ffffff;
+}

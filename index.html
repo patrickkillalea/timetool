@@ -1,0 +1,341 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="icon" href="clock_blue.ico">-->
+  <link rel="shortcut icon" href="clock.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json">
+
+  <title>Time Tool</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
+
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
+
+  <script>
+    function length(i) {
+      if (i < 10)
+        i = "0" + i;
+
+      return i;
+    }
+
+    function clock() {
+      //window.alert('test1');
+      var currTime = new Date();
+      var currHrs = length(currTime.getHours());
+      var currMins = length(currTime.getMinutes());
+      var currSecs = length(currTime.getSeconds());
+      var format = 0; //24 hr format
+      var time;
+
+      if (format == 0)
+        time = currHrs + ":" + currMins;
+
+      document.getElementById("Clock").innerHTML = time;
+      setTimeout("clock()", 1000);
+
+    }
+  </script>
+  <script>
+    $(function() {
+      $("#datepicker").datepicker('setDate', new Date());
+    });
+  </script>
+
+  <!-- Custom styles for this template -->
+  <link href="css/datepicker.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <link href="css/navbar-fixed-top.css" rel="stylesheet">
+  <link href="css/div-style.css" rel="stylesheet">
+  <link href="font-awesome-4.2.0/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body onload="clock();">
+
+
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+
+        <div class="btn-group home-link" id='homePage'>
+          <span class="text icon-hover ">Time Tool</span>
+        </div>
+
+
+        <div class="btn-group" id='addPage'>
+          <a target="_blank"><span class="middle-glyphicon glyphicon glyphicon-plus white icon-hover"></span></a>
+        </div>
+
+        <div class="btn-group " id='settingsPage'>
+          <a target="_blank" data-toggle="modal" data-target="#settingsModal"><span class="middle-glyphicon glyphicon glyphicon-cog white icon-hover"></span></a>
+        </div>
+
+        <div class="btn-group" id='website'>
+          <a href='https://edidashboard-c9-patrickkillalea.c9.io/hello-world.html' target="_blank"><span class="middle-glyphicon glyphicon glyphicon-globe white icon-hover"></span></a>
+        </div>
+
+        <div class="btn-group pull-right">
+          <span class="glyphicon glyphicon-user white icon-hover dropdown-toggle" data-toggle="dropdown"></span> Patrick
+          <ul class="dropdown-menu pull-right" role="menu">
+            <li><a href='https://timetool-c9-rebeccacurran.c9.io/Logout.html'><span class="glyphicon glyphicon-off"></span> Log Out</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+
+  <div id='HomePageDiv'>
+    <!--DATE TIME BAR BEGIN-->
+    <div>
+      <br>
+      <br>
+      <div class="container-fluid">
+        <a target="_blank"><span class="glyphicon glyphicon-circle-arrow-left icon-hover"></span></a>
+
+        <input type="text" id="datepicker">
+
+        <a target="_blank"><span class="glyphicon glyphicon-circle-arrow-right icon-hover"></span></a>
+        <!--<span type="time" class="pull center" id="Clock">here/span>-->
+      </div>
+    </div>
+    <br>
+    <!--DATE TIME BAR END-->
+
+    <div class="top_block ProjectBlock">
+      <div class="content">
+        <span class="pull-left">Project</span><span class="pull-right"><a target="_blank"><span class="fa fa-pause white icon-hover"></span>
+        </a>
+        </span>
+      </div>
+    </div>
+    <div class="top_block TaskBlock">
+      <div class="content">
+        <span class="pull-left">Task Description</span><span type="time" class="pull-right" id="Clock">here</span>
+      </div>
+    </div>
+    <br>
+    <!--</div>-->
+
+    <!--<div class="content">-->
+    <div class="top_block ProjectBlock">
+      <div class="content">
+        <span class="pull-left">Project</span><span class="pull-right"><a target="_blank"><span class="fa fa-play white icon-hover"></span>
+        </a>
+        </span>
+      </div>
+    </div>
+    <div class="top_block TaskBlock">
+      <div class="content">
+        <span class="pull-left">Task Description</span><span class="pull-right">01:24</span>
+      </div>
+    </div>
+    <br>
+    <!--</div>-->
+
+    <!--<div class="content">-->
+    <div class="top_block ProjectBlock">
+      <div class="content">
+        <span class="pull-left">Project</span><span class="pull-right"><a target="_blank"><span class="fa fa-play white icon-hover"></span>
+        </a>
+        </span>
+      </div>
+    </div>
+    <div class="top_block TaskBlock">
+      <div class="content">
+        <span class="pull-left">Task Description</span><span class="pull-right">04:21</span>
+      </div>
+    </div>
+    <br>
+  </div>
+
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+          </button>
+
+          <h4 class="modal-title" id="myModalLabel">Settings</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          <div class="input-group">
+
+            <span class="input-group-addon">Alert Every</span>
+
+            <input type="number" class="form-control" placeholder="01:00">
+
+          </div>
+
+          <br>
+
+          <div class="input-group">
+
+            <span class="input-group-addon">Audio</span>
+
+            <input type="number" class="form-control" placeholder="5">
+
+          </div>
+
+          <br>
+
+          <div class="input-group">
+
+            <span class="input-group-addon">Default Project</span>
+
+            <input type="dropdown" class="form-control" placeholder="Enrollment">
+
+          </div>
+
+          <br>
+
+          <div class="input-group">
+
+            <span class="input-group-addon">Default Day End</span>
+
+            <input type="time" class="form-control" placeholder="17:00">
+
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+          <button type="button" class="btn btn-primary">Save changes</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id='AddProject' hidden="true">
+    <div class="btn-group">
+      <br>
+      <br>
+      <button id='add' type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
+        <span class="glyphicon glyphicon-plus"></span> Add New Project
+      </button>
+    </div>
+
+    <div class="container">
+      <table class="table table-striped">
+
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Add New Project</h4>
+          </div>
+          <div class="modal-body">
+            <form action="InsertProject.php" method="post">
+              <div class="input-group">
+                <span class="input-group-addon">Project ID</span>
+                <input type="number" class="form-control" placeholder="Project ID" name='ProjectID'>
+              </div>
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon">Project Name</span>
+                <input type="text" class="form-control" placeholder="Project Name" name='ProjectName'>
+              </div>
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon">Project Description</span>
+                <input type="text" class="form-control" placeholder="Project Description" name='ProjectDescription'>
+              </div>
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon">Show on HomeScreen</span>
+                <input type="integer" class="form-control" placeholder="0/1" name='Show'>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $("#homePage").click(function() {
+      $("#HomePageDiv").show();
+      $("#AddProject").hide();
+    });
+
+    $("#addPage").click(function() {
+      $("#HomePageDiv").hide();
+      $("#AddProject").show();
+
+      $('table').empty();
+
+      $.get("allprojects.php", function(data) {
+        $('table').append(data);
+
+      })
+    });
+
+    $('#myModl').on('hidden', function() {
+      $.get("allprojects.php", function(data) {
+        $('table').append(data);
+
+      })
+    })
+
+    $("#settingsPage").click(function() {
+      $("#HomePageDiv").hide();
+      $("#AddProject").hide();
+
+    });
+  </script>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+  <script src="js/knockout-min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+
+</body>
+
+</html>
